@@ -14,7 +14,7 @@ export default function Home({ navigation, route }) {
         <Text style={styles.title}>HOME SCREEN</Text>
         <Text style={styles.title}>{userInfo?.name}</Text>
         <Text style={styles.title}>{userInfo?.email}</Text>
-
+        <Button title={"Drawer"} onPress={() => navigation.toggleDrawer()} />
         <Button
           title={"Logout"}
           onPress={() => {
@@ -23,7 +23,6 @@ export default function Home({ navigation, route }) {
               dispatch(setUserMeta(null));
               dispatch(setIsLoggedIn(false));
               dispatch(setAppLoader(false));
-
             }, 600);
           }}
         />
